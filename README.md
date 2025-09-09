@@ -1,7 +1,7 @@
-Stailence ✂️💅
+# Stailence ✂️💅
 
 Plataforma web innovadora para la gestión de citas en negocios locales como peluquerías, barberías y centros de estética. Permite optimizar la agenda eliminando la necesidad de reservas por llamadas o mensajes, ahorrando tiempo a clientes y negocios mientras mejora la experiencia de servicio.
-
+---
 🚀 Características
 
 Agendamiento rápido y en línea de citas
@@ -13,12 +13,12 @@ Gestión de clientes y servicios
 Notificaciones automáticas de recordatorio
 
 Sistema de historial y estadísticas de reservas
-
+---
 🛠️ Tecnologías
 -
 -
 -
-
+---
 📋 Checklist de Revisión de Código
 
 ✅ Claridad
@@ -58,7 +58,7 @@ Sigue el estilo del proyecto
 Sin código duplicado
 
 Funciones con responsabilidad única
-
+---
 👥 Reglas de Colaboración
 🔀 Flujo de Ramas (GitHub Flow)
 
@@ -101,7 +101,7 @@ Nombres de ramas: En inglés, minúsculas y separadas por guiones
 Mensajes de commit: Claros y en presente (ej: "add booking system")
 
 Pull Requests: Descripción detallada de los cambios
-
+---
 👥 Integrantes
 
 Angie Cobo – 230222011
