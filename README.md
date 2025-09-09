@@ -2,7 +2,7 @@
 
 Plataforma web innovadora para la gestión de citas en negocios locales como peluquerías, barberías y centros de estética. Permite optimizar la agenda eliminando la necesidad de reservas por llamadas o mensajes, ahorrando tiempo a clientes y negocios mientras mejora la experiencia de servicio.
 ---
-🚀 Características
+## 🚀 Características
 
 Agendamiento rápido y en línea de citas
 
@@ -20,7 +20,7 @@ Sistema de historial y estadísticas de reservas
 -
 -
 ---
-📋 Checklist de Revisión de Código
+## 📋 Checklist de Revisión de Código
 
 ✅ Claridad
 
@@ -59,8 +59,9 @@ Sigue el estilo del proyecto
 Sin código duplicado
 
 Funciones con responsabilidad única
+
 ---
-👥 Reglas de Colaboración
+## 👥 Reglas de Colaboración
 🔀 Flujo de Ramas (GitHub Flow)
 
 Nuestro equipo seguirá la metodología GitHub Flow simplificada:
@@ -103,16 +104,15 @@ Mensajes de commit: Claros y en presente (ej: "add booking system")
 
 Pull Requests: Descripción detallada de los cambios
 ---
-👥 Integrantes
+## 👥 Integrantes
 
 Angie Cobo – 230222011
 Diana López – 230222003
 Alejandro Hernandez - 230222020
 Valentina Gonzalez - 230231019
 
-
-
-📞 Contacto
+---
+## 📞 Contacto
 
 Universidad: UCEVA
 Semestre: 7°
