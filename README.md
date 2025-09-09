@@ -13,6 +13,7 @@ Gestión de clientes y servicios
 Notificaciones automáticas de recordatorio
 
 Sistema de historial y estadísticas de reservas
+
 ---
 🛠️ Tecnologías
 -
