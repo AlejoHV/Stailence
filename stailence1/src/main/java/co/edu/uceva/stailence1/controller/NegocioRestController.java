@@ -1,4 +1,4 @@
-package co.edu.uceva.stailence1.model.entities;
+package co.edu.uceva.stailence1.controller;
 
 import jakarta.persistence.*;
 

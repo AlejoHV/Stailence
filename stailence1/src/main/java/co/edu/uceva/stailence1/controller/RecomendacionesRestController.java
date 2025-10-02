@@ -1,7 +1,7 @@
-package com.stailence.backend.controller;
+package co.edu.uceva.stailence1.controller;
 
-import com.stailence.backend.entities.Recomendaciones;
-import com.stailence.backend.service.IRecomendacionesService;
+import co.edu.uceva.stailence1.model.entities.Recomendaciones;
+import co.edu.uceva.stailence1.model.service.IRecomendacionesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

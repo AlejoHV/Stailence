@@ -1,10 +1,11 @@
-package com.stailence.backend.controller;
+package co.edu.uceva.stailence1.controller;
 
-import com.stailence.backend.entities.EmpleadoServicio;
-import com.stailence.backend.entities.EmpleadoServicioId;
-import com.stailence.backend.service.IEmpleadoServicioService;
+import co.edu.uceva.stailence1.model.entities.EmpleadoServicio;
+import co.edu.uceva.stailence1.model.entities.EmpleadoServicioId;
+import co.edu.uceva.stailence1.model.service.IEmpleadoServicioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 

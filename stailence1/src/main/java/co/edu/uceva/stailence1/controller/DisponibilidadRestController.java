@@ -1,7 +1,7 @@
-package com.stailence.backend.controller;
+package co.edu.uceva.stailence1.controller;
 
-import com.stailence.backend.entities.Disponibilidad;
-import com.stailence.backend.service.IDisponibilidadService;
+import co.edu.uceva.stailence1.model.entities.Disponibilidad;
+import co.edu.uceva.stailence1.model.service.IDisponibilidadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
