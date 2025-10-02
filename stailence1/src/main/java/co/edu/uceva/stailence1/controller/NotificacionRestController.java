@@ -1,9 +1,10 @@
-package com.stailence.backend.controller;
+package co.edu.uceva.stailence1.controller;
 
-import com.stailence.backend.entities.Notificaciones;
-import com.stailence.backend.service.INotificacionesService;
+import co.edu.uceva.stailence1.model.entities.Notificaciones;
+import co.edu.uceva.stailence1.model.service.INotificacionesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.List;
 

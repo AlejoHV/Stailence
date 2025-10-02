@@ -1,4 +1,4 @@
-package com.stailence.backend.entities;
+package co.edu.uceva.stailence1.model.entities;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
