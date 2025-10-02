@@ -8,7 +8,7 @@ public class Negocio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;   // mapea id_Negocios
+    private Long id_Negocios;   // mapea id_Negocios
 
     private String nombre;
     private String direccion;
@@ -18,15 +18,15 @@ public class Negocio {
     private String correo;
 
     @Column(name = "horario_general")
-    private String horarioGeneral;
+    private String horario_general;
 
     // Getters y Setters
     public Long getId() {
-        return id;
+        return id_Negocios;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.id_Negocios = id;
     }
 
     public String getNombre() {
@@ -62,10 +62,10 @@ public class Negocio {
     }
 
     public String getHorarioGeneral() {
-        return horarioGeneral;
+        return horario_general;
     }
 
     public void setHorarioGeneral(String horarioGeneral) {
-        this.horarioGeneral = horarioGeneral;
+        this.horario_general = horarioGeneral;
     }
 }

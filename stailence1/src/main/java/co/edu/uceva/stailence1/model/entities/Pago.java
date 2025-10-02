@@ -10,7 +10,7 @@ public class Pago {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_Pagos")
-    private Long id;
+    private Long id_Pagos;
 
     @Column(nullable = false)
     private Double valor;
@@ -20,7 +20,7 @@ public class Pago {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "metodo_pago", nullable = false)
-    private MetodoPago metodoPago;
+    private MetodoPago metodo_pago;
 
     @ManyToOne
     @JoinColumn(name = "id_Cita")
@@ -35,10 +35,10 @@ public class Pago {
 
     // Getters y Setters
     public Long getId() {
-        return id;
+        return id_Pagos;
     }
     public void setId(Long id) {
-        this.id = id;
+        this.id_Pagos = id;
     }
 
     public Double getValor() {
@@ -56,10 +56,10 @@ public class Pago {
     }
 
     public MetodoPago getMetodoPago() {
-        return metodoPago;
+        return metodo_pago;
     }
     public void setMetodoPago(MetodoPago metodoPago) {
-        this.metodoPago = metodoPago;
+        this.metodo_pago = metodoPago;
     }
 
     public Cita getCita() {

@@ -7,8 +7,8 @@ import java.util.Objects;
 @Embeddable
 public class EmpleadoServicioId implements Serializable {
 
-    private Long idEmpleado;
-    private Long idServicio;
+    private Long id_Empleado;
+    private Long id_Servicio;
 
     // Getters, Setters, hashCode y equals
     /*
@@ -33,8 +33,8 @@ public class EmpleadoServicioId implements Serializable {
 
     // 🔹 Constructor con parámetros (necesario para tu código)
     public EmpleadoServicioId(Long idEmpleado, Long idServicio) {
-        this.idEmpleado = idEmpleado;
-        this.idServicio = idServicio;
+        this.id_Empleado = idEmpleado;
+        this.id_Servicio = idServicio;
     }
 
     @Override
@@ -42,12 +42,12 @@ public class EmpleadoServicioId implements Serializable {
         if (this == o) return true;
         if (!(o instanceof EmpleadoServicioId)) return false;
         EmpleadoServicioId that = (EmpleadoServicioId) o;
-        return Objects.equals(idEmpleado, that.idEmpleado) &&
-                Objects.equals(idServicio, that.idServicio);
+        return Objects.equals(id_Empleado, that.id_Empleado) &&
+                Objects.equals(id_Servicio, that.id_Servicio);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idEmpleado, idServicio);
+        return Objects.hash(id_Empleado, id_Servicio);
     }
 }

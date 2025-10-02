@@ -2,7 +2,7 @@ package co.edu.uceva.stailence1.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import co.edu.uceva.stailence1.model.entities.Servicio;
+import co.edu.uceva.stailence1.model.entities.Servicios;
 import co.edu.uceva.stailence1.model.service.IServicioService;
 
 import java.util.List;
@@ -16,23 +16,23 @@ public class ServicioRestController {
     private IServicioService servicioService;
 
     @GetMapping
-    public List<Servicio> listar() {
+    public List<Servicios> listar() {
         return servicioService.findAll();
     }
 
     @PostMapping
-    public Servicio crear(@RequestBody Servicio servicio) {
+    public Servicios crear(@RequestBody Servicios servicio) {
         return servicioService.save(servicio);
     }
 
     @GetMapping("/{id}")
-    public Servicio obtenerPorId(@PathVariable Long id) {
+    public Servicios obtenerPorId(@PathVariable Long id) {
         return servicioService.findById(id);
     }
 
     @PutMapping("/{id}")
-    public Servicio actualizar(@RequestBody Servicio servicio, @PathVariable Long id) {
-        Servicio existente = servicioService.findById(id);
+    public Servicios actualizar(@RequestBody Servicios servicio, @PathVariable Long id) {
+        Servicios existente = servicioService.findById(id);
         if (existente != null) {
             existente.setNombreServicio(servicio.getNombreServicio());
             existente.setDuracionServicio(servicio.getDuracionServicio());

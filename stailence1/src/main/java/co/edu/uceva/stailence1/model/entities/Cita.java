@@ -12,16 +12,16 @@ public class Cita {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_Citas")
-    private Long id;
+    private Long id_Citas;
 
     @Column(name = "fecha_estimada", nullable = false)
-    private LocalDate fechaEstimada;
+    private LocalDate fecha_estimada;
 
     @Column(name = "hora_estipulada", nullable = false)
-    private LocalTime horaEstipulada;
+    private LocalTime hora_estipulada;
 
     @Column(name = "fecha_real")
-    private LocalDateTime fechaReal;
+    private LocalDateTime fecha_real;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -35,7 +35,7 @@ public class Cita {
     // Relación con el servicio
     @ManyToOne
     @JoinColumn(name = "id_Servicio")
-    private Servicio servicio;
+    private Servicios servicio;
 
     // Relación con el cliente
     @ManyToOne
@@ -51,31 +51,31 @@ public class Cita {
 
     // Getters y Setters
     public Long getId() {
-        return id;
+        return id_Citas;
     }
     public void setId(Long id) {
-        this.id = id;
+        this.id_Citas = id;
     }
 
     public LocalDate getFechaEstimada() {
-        return fechaEstimada;
+        return fecha_estimada;
     }
     public void setFechaEstimada(LocalDate fechaEstimada) {
-        this.fechaEstimada = fechaEstimada;
+        this.fecha_estimada = fechaEstimada;
     }
 
     public LocalTime getHoraEstipulada() {
-        return horaEstipulada;
+        return hora_estipulada;
     }
     public void setHoraEstipulada(LocalTime horaEstipulada) {
-        this.horaEstipulada = horaEstipulada;
+        this.hora_estipulada = horaEstipulada;
     }
 
     public LocalDateTime getFechaReal() {
-        return fechaReal;
+        return fecha_real;
     }
     public void setFechaReal(LocalDateTime fechaReal) {
-        this.fechaReal = fechaReal;
+        this.fecha_real = fechaReal;
     }
 
     public Estado getEstado() {
@@ -92,10 +92,10 @@ public class Cita {
         this.empleado = empleado;
     }
 
-    public Servicio getServicio() {
+    public Servicios getServicio() {
         return servicio;
     }
-    public void setServicio(Servicio servicio) {
+    public void setServicio(Servicios servicio) {
         this.servicio = servicio;
     }
 

@@ -3,7 +3,7 @@ package co.edu.uceva.stailence1.model.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import co.edu.uceva.stailence1.model.dao.IServicioDao;
-import co.edu.uceva.stailence1.model.entities.Servicio;
+import co.edu.uceva.stailence1.model.entities.Servicios;
 
 import java.util.List;
 
@@ -14,12 +14,12 @@ public class ServicioServiceImpl implements IServicioService {
     private IServicioDao servicioDao;
 
     @Override
-    public List<Servicio> findAll() {
+    public List<Servicios> findAll() {
         return servicioDao.findAll();
     }
 
     @Override
-    public Servicio save(Servicio servicio) {
+    public Servicios save(Servicios servicio) {
         return servicioDao.save(servicio);
     }
 
@@ -29,7 +29,7 @@ public class ServicioServiceImpl implements IServicioService {
     }
 
     @Override
-    public Servicio findById(Long id) {
+    public Servicios findById(Long id) {
         return servicioDao.findById(id).orElse(null);
     }
 }

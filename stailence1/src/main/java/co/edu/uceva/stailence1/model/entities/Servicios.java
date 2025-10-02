@@ -4,18 +4,18 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "servicios")
-public class Servicio {
+public class Servicios {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_Servicios")
-    private Long id;
+    private Long id_Servicios;
 
     @Column(name = "nombre_servicio", nullable = false, length = 150)
-    private String nombreServicio;
+    private String nombre_servicio;
 
     @Column(name = "duracion_servicio", nullable = false)
-    private int duracionServicio;
+    private int duracion_servicio;
 
     @Column(nullable = false, precision = 10, scale = 2)
     private Double precio;
@@ -27,24 +27,24 @@ public class Servicio {
 
     // Getters y Setters
     public Long getId() {
-        return id;
+        return id_Servicios;
     }
     public void setId(Long id) {
-        this.id = id;
+        this.id_Servicios = id;
     }
 
     public String getNombreServicio() {
-        return nombreServicio;
+        return nombre_servicio;
     }
     public void setNombreServicio(String nombreServicio) {
-        this.nombreServicio = nombreServicio;
+        this.nombre_servicio = nombreServicio;
     }
 
     public int getDuracionServicio() {
-        return duracionServicio;
+        return duracion_servicio;
     }
     public void setDuracionServicio(int duracionServicio) {
-        this.duracionServicio = duracionServicio;
+        this.duracion_servicio = duracionServicio;
     }
 
     public Double getPrecio() {
