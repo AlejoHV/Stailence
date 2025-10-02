@@ -8,17 +8,17 @@ public class TipoUsuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id_Tipos;
 
     private String descripcion;
 
     // Getters y Setters
     public Long getId() {
-        return id;
+        return id_Tipos;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.id_Tipos = id;
     }
 
     public String getDescripcion() {

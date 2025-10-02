@@ -1,0 +1,1 @@
+Insert Into tipo_usuario (id_Tipos, descripcion) VALUES (1, 'Prueba usuario');
