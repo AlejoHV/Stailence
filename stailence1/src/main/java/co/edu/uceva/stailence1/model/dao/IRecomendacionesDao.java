@@ -1,6 +1,6 @@
-package com.stailence.backend.dao;
+package co.edu.uceva.stailence1.model.dao;
 
-import com.stailence.backend.entities.Recomendaciones;
+import co.edu.uceva.stailence1.model.entities.Recomendaciones;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

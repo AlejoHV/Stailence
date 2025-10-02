@@ -1,6 +1,6 @@
-package com.stailence.backend.service;
+package co.edu.uceva.stailence1.model.service;
 
-import com.stailence.backend.entities.Disponibilidad;
+import co.edu.uceva.stailence1.model.entities.Disponibilidad;
 import java.util.List;
 
 public interface IDisponibilidadService {

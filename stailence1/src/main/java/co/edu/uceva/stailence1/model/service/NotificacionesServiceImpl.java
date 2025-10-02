@@ -1,7 +1,7 @@
-package com.stailence.backend.service;
+package co.edu.uceva.stailence1.model.service;
 
-import com.stailence.backend.dao.INotificacionesDao;
-import com.stailence.backend.entities.Notificaciones;
+import co.edu.uceva.stailence1.model.dao.INotificacionesDao;
+import co.edu.uceva.stailence1.model.entities.Notificaciones;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,8 +1,8 @@
-package com.stailence.backend.service;
+package co.edu.uceva.stailence1.model.service;
 
-import com.stailence.backend.dao.IEmpleadoServicioDao;
-import com.stailence.backend.entities.EmpleadoServicio;
-import com.stailence.backend.entities.EmpleadoServicioId;
+import co.edu.uceva.stailence1.model.dao.IEmpleadoServicioDao;
+import co.edu.uceva.stailence1.model.entities.EmpleadoServicio;
+import co.edu.uceva.stailence1.model.entities.EmpleadoServicioId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

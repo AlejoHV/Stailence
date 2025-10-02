@@ -1,6 +1,6 @@
-package com.stailence.backend.service;
+package co.edu.uceva.stailence1.model.service;
 
-import com.stailence.backend.entities.Notificaciones;
+import co.edu.uceva.stailence1.model.entities.Notificaciones;
 import java.util.List;
 
 public interface INotificacionesService {

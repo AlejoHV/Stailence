@@ -19,7 +19,7 @@ public class EmpleadoServicio {
     @ManyToOne
     @MapsId("idServicio")
     @JoinColumn(name = "id_Servicio")
-    private Servicios servicio;
+    private Servicio servicio;
 
     // Getters y Setters
     public EmpleadoServicioId getId() {
@@ -38,11 +38,11 @@ public class EmpleadoServicio {
         this.empleado = empleado;
     }
 
-    public Servicios getServicio() {
+    public Servicio getServicio() {
         return servicio;
     }
 
-    public void setServicio(Servicios servicio) {
+    public void setServicio(Servicio servicio) {
         this.servicio = servicio;
     }
 }

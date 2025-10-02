@@ -30,7 +30,7 @@ public class Cita {
     // Relación con el empleado
     @ManyToOne
     @JoinColumn(name = "id_Empleado")
-    private Usuario empleado;
+    private Usuarios empleado;
 
     // Relación con el servicio
     @ManyToOne
@@ -40,7 +40,7 @@ public class Cita {
     // Relación con el cliente
     @ManyToOne
     @JoinColumn(name = "id_Cliente")
-    private Usuario cliente;
+    private Usuarios cliente;
 
     public enum Estado {
         reservada,
@@ -85,10 +85,10 @@ public class Cita {
         this.estado = estado;
     }
 
-    public Usuario getEmpleado() {
+    public Usuarios getEmpleado() {
         return empleado;
     }
-    public void setEmpleado(Usuario empleado) {
+    public void setEmpleado(Usuarios empleado) {
         this.empleado = empleado;
     }
 
@@ -99,10 +99,10 @@ public class Cita {
         this.servicio = servicio;
     }
 
-    public Usuario getCliente() {
+    public Usuarios getCliente() {
         return cliente;
     }
-    public void setCliente(Usuario cliente) {
+    public void setCliente(Usuarios cliente) {
         this.cliente = cliente;
     }
 }

@@ -2,7 +2,7 @@ package co.edu.uceva.stailence1.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import co.edu.uceva.stailence1.model.entities.Usuario;
+import co.edu.uceva.stailence1.model.entities.Usuarios;
 import co.edu.uceva.stailence1.model.service.IUsuarioService;
 
 import java.util.List;
@@ -16,23 +16,23 @@ public class UsuarioRestController {
     private IUsuarioService usuarioService;
 
     @GetMapping
-    public List<Usuario> listar() {
+    public List<Usuarios> listar() {
         return usuarioService.findAll();
     }
 
     @PostMapping
-    public Usuario crear(@RequestBody Usuario usuario) {
+    public Usuarios crear(@RequestBody Usuarios usuario) {
         return usuarioService.save(usuario);
     }
 
     @GetMapping("/{id}")
-    public Usuario obtenerPorId(@PathVariable Long id) {
+    public Usuarios obtenerPorId(@PathVariable Long id) {
         return usuarioService.findById(id);
     }
 
     @PutMapping("/{id}")
-    public Usuario actualizar(@RequestBody Usuario usuario, @PathVariable Long id) {
-        Usuario existente = usuarioService.findById(id);
+    public Usuarios actualizar(@RequestBody Usuarios usuario, @PathVariable Long id) {
+        Usuarios existente = usuarioService.findById(id);
         if (existente != null) {
             existente.setNombre(usuario.getNombre());
             existente.setApellido(usuario.getApellido());

@@ -1,7 +1,7 @@
-package com.stailence.backend.dao;
+package co.edu.uceva.stailence1.model.dao;
 
-import com.stailence.backend.entities.EmpleadoServicio;
-import com.stailence.backend.entities.EmpleadoServicioId;
+import co.edu.uceva.stailence1.model.entities.EmpleadoServicio;
+import co.edu.uceva.stailence1.model.entities.EmpleadoServicioId;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

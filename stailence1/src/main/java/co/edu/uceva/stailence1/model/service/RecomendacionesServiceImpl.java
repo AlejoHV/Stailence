@@ -1,7 +1,7 @@
-package com.stailence.backend.service;
+package co.edu.uceva.stailence1.model.service;
 
-import com.stailence.backend.dao.IRecomendacionesDao;
-import com.stailence.backend.entities.Recomendaciones;
+import co.edu.uceva.stailence1.model.dao.IRecomendacionesDao;
+import co.edu.uceva.stailence1.model.entities.Recomendaciones;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

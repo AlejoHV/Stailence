@@ -3,7 +3,7 @@ package co.edu.uceva.stailence1.model.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import co.edu.uceva.stailence1.model.dao.IUsuarioDao;
-import co.edu.uceva.stailence1.model.entities.Usuario;
+import co.edu.uceva.stailence1.model.entities.Usuarios;
 
 import java.util.List;
 
@@ -14,12 +14,12 @@ public class UsuarioServiceImpl implements IUsuarioService {
     private IUsuarioDao usuarioDao;
 
     @Override
-    public List<Usuario> findAll() {
+    public List<Usuarios> findAll() {
         return usuarioDao.findAll();
     }
 
     @Override
-    public Usuario save(Usuario usuario) {
+    public Usuarios save(Usuarios usuario) {
         return usuarioDao.save(usuario);
     }
 
@@ -29,7 +29,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
     }
 
     @Override
-    public Usuario findById(Long id) {
+    public Usuarios findById(Long id) {
         return usuarioDao.findById(id).orElse(null);
     }
 }

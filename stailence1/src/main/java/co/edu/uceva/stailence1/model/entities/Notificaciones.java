@@ -29,7 +29,7 @@ public class Notificaciones {
     // Relación con Cita
     @ManyToOne
     @JoinColumn(name = "id_Cita")
-    private Citas cita;
+    private Cita cita;
 
     // ===== Enum interno =====
     public enum EstadoNotificacion {
@@ -77,11 +77,11 @@ public class Notificaciones {
         this.usuario = usuario;
     }
 
-    public Citas getCita() {
+    public Cita getCita() {
         return cita;
     }
 
-    public void setCita(Citas cita) {
+    public void setCita(Cita cita) {
         this.cita = cita;
     }
 }
