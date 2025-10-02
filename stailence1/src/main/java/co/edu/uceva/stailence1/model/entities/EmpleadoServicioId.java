@@ -11,6 +11,7 @@ public class EmpleadoServicioId implements Serializable {
     private Long idServicio;
 
     // Getters, Setters, hashCode y equals
+    /*
     public Long getIdEmpleado() {
         return idEmpleado;
     }
@@ -24,6 +25,15 @@ public class EmpleadoServicioId implements Serializable {
     }
 
     public void setIdServicio(Long idServicio) {
+        this.idServicio = idServicio;
+    }
+     */
+
+    public EmpleadoServicioId() {}
+
+    // 🔹 Constructor con parámetros (necesario para tu código)
+    public EmpleadoServicioId(Long idEmpleado, Long idServicio) {
+        this.idEmpleado = idEmpleado;
         this.idServicio = idServicio;
     }
 
