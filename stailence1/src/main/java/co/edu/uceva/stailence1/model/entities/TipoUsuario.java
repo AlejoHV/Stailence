@@ -1,31 +1,51 @@
-package co.edu.uceva.stailence1.model.entities;
+package co.edu.uceva.stailence1.controller;
 
-import jakarta.persistence.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import co.edu.uceva.stailence1.model.entities.Negocio;
+import co.edu.uceva.stailence1.model.service.INegocioService;
 
-@Entity
-@Table(name = "tipo_usuario")
-public class TipoUsuario {
+import java.util.List;
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+@RestController
+@RequestMapping("/api/negocios")
+@CrossOrigin(origins = "*")
+public class NegocioRestController {
 
-    private String descripcion;
+    @Autowired
+    private INegocioService negocioService;
 
-    // Getters y Setters
-    public Long getId() {
-        return id;
+    @GetMapping
+    public List<Negocio> listar() {
+        return negocioService.findAll();
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    @PostMapping
+    public Negocio crear(@RequestBody Negocio negocio) {
+        return negocioService.save(negocio);
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    @GetMapping("/{id}")
+    public Negocio obtenerPorId(@PathVariable Long id) {
+        return negocioService.findById(id);
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    @PutMapping("/{id}")
+    public Negocio actualizar(@RequestBody Negocio negocio, @PathVariable Long id) {
+        Negocio existente = negocioService.findById(id);
+        if (existente != null) {
+            existente.setNombre(negocio.getNombre());
+            existente.setDireccion(negocio.getDireccion());
+            existente.setTelefono(negocio.getTelefono());
+            existente.setCorreo(negocio.getCorreo());
+            existente.setHorarioGeneral(negocio.getHorarioGeneral());
+            return negocioService.save(existente);
+        }
+        return null;
+    }
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable Long id) {
+        negocioService.delete(id);
     }
 }
