@@ -2,6 +2,8 @@ package co.edu.uceva.stailence1.model.entities;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "servicios")
 public class Servicios {
@@ -18,7 +20,7 @@ public class Servicios {
     private int duracion_servicio;
 
     @Column(nullable = false, precision = 10, scale = 2)
-    private Double precio;
+    private BigDecimal precio;
 
     // Relación con Negocio (Muchos servicios pertenecen a un negocio)
     @ManyToOne
@@ -47,10 +49,10 @@ public class Servicios {
         this.duracion_servicio = duracionServicio;
     }
 
-    public Double getPrecio() {
+    public BigDecimal getPrecio() {
         return precio;
     }
-    public void setPrecio(Double precio) {
+    public void setPrecio(BigDecimal precio) {
         this.precio = precio;
     }
 

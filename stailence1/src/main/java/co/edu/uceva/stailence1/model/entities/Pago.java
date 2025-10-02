@@ -1,10 +1,12 @@
 package co.edu.uceva.stailence1.model.entities;
 
 import jakarta.persistence.*;
+
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "pagos")
+@Table(name = "ALTER TABLE pagos MODIFY valor DECIMAL(10,2) NOT NULL;pagos")
 public class Pago {
 
     @Id
@@ -13,7 +15,7 @@ public class Pago {
     private Long id_Pagos;
 
     @Column(nullable = false)
-    private Double valor;
+    private BigDecimal valor;
 
     @Column(nullable = false)
     private LocalDateTime fecha;
@@ -41,10 +43,10 @@ public class Pago {
         this.id_Pagos = id;
     }
 
-    public Double getValor() {
+    public BigDecimal getValor() {
         return valor;
     }
-    public void setValor(Double valor) {
+    public void setValor(BigDecimal valor) {
         this.valor = valor;
     }
 
