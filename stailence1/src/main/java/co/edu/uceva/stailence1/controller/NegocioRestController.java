@@ -1,71 +1,51 @@
 package co.edu.uceva.stailence1.controller;
 
-import jakarta.persistence.*;
+import co.edu.uceva.stailence1.model.entities.Negocio;
+import co.edu.uceva.stailence1.model.service.INegocioService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
-@Entity
-@Table(name = "negocios")
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/negocios")  // Prefijo para la ruta
 public class NegocioRestController {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;   // mapea id_Negocios
+    @Autowired
+    private INegocioService negocioService;
 
-    private String nombre;
-    private String direccion;
-    private String telefono;
-
-    @Column(unique = true)
-    private String correo;
-
-    @Column(name = "horario_general")
-    private String horarioGeneral;
-
-    // Getters y Setters
-    public Long getId() {
-        return id;
+    // Crear negocio
+    @PostMapping
+    public Negocio crearNegocio(@RequestBody Negocio negocio) {
+        return negocioService.save(negocio);
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    // Listar todos los negocios
+    @GetMapping
+    public List<Negocio> listarNegocios() {
+        return negocioService.findAll();
     }
 
-    public String getNombre() {
-        return nombre;
+    // Buscar un negocio por id
+    @GetMapping("/{id}")
+    public Negocio obtenerNegocio(@PathVariable Long id) {
+        return negocioService.findById(id);
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    // Actualizar un negocio
+    @PutMapping("/{id}")
+    public Negocio actualizarNegocio(@PathVariable Long id, @RequestBody Negocio negocio) {
+        Negocio negocioExistente = negocioService.findById(id);
+        if (negocioExistente != null) {
+            negocio.setId_Negocios(id);
+            return negocioService.save(negocio);
+        }
+        return null;
     }
 
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-
-    public String getHorarioGeneral() {
-        return horarioGeneral;
-    }
-
-    public void setHorarioGeneral(String horarioGeneral) {
-        this.horarioGeneral = horarioGeneral;
+    // Eliminar un negocio
+    @DeleteMapping("/{id}")
+    public void eliminarNegocio(@PathVariable Long id) {
+        negocioService.delete(id);
     }
 }

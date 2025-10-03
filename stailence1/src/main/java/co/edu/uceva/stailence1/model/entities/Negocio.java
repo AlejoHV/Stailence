@@ -25,7 +25,7 @@ public class Negocio {
         return id_Negocios;
     }
 
-    public void setId(Long id) {
+    public void setId_Negocios(Long id) {
         this.id_Negocios = id;
     }
 
