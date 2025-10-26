@@ -1,6 +1,7 @@
 package co.edu.uceva.stailence1.model.entities;
 
 import jakarta.persistence.*;
+
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -10,31 +11,28 @@ public class EmpleadoServicioId implements Serializable {
     private Long id_Empleado;
     private Long id_Servicio;
 
-    // Getters, Setters, hashCode y equals
-    /*
-    public Long getIdEmpleado() {
-        return idEmpleado;
+    public EmpleadoServicioId() {
     }
 
-    public void setIdEmpleado(Long idEmpleado) {
-        this.idEmpleado = idEmpleado;
+    public EmpleadoServicioId(Long id_Empleado, Long id_Servicio) {
+        this.id_Empleado = id_Empleado;
+        this.id_Servicio = id_Servicio;
     }
 
-    public Long getIdServicio() {
-        return idServicio;
+    public Long getId_Empleado() {
+        return id_Empleado;
     }
 
-    public void setIdServicio(Long idServicio) {
-        this.idServicio = idServicio;
+    public void setId_Empleado(Long id_Empleado) {
+        this.id_Empleado = id_Empleado;
     }
-     */
 
-    public EmpleadoServicioId() {}
+    public Long getId_Servicio() {
+        return id_Servicio;
+    }
 
-    // 🔹 Constructor con parámetros (necesario para tu código)
-    public EmpleadoServicioId(Long idEmpleado, Long idServicio) {
-        this.id_Empleado = idEmpleado;
-        this.id_Servicio = idServicio;
+    public void setId_Servicio(Long id_Servicio) {
+        this.id_Servicio = id_Servicio;
     }
 
     @Override

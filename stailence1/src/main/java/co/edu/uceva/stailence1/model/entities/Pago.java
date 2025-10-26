@@ -1,19 +1,17 @@
 package co.edu.uceva.stailence1.model.entities;
 
 import jakarta.persistence.*;
-
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "ALTER TABLE pagos MODIFY valor DECIMAL(10,2) NOT NULL;pagos")
+@Table(name = "pagos")
 public class Pago {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_Pagos")
     private Long id_Pagos;
-
     @Column(nullable = false)
     private BigDecimal valor;
 

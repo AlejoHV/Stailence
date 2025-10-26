@@ -3,13 +3,12 @@ package co.edu.uceva.stailence1.model.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "Disponibilidad")
+@Table(name = "disponibilidad")
 public class Disponibilidad {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_Disponibilidad;
-
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private DiaSemana dia;

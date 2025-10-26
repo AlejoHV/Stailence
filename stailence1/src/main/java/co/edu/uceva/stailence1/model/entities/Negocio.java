@@ -1,5 +1,6 @@
 package co.edu.uceva.stailence1.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 @Entity
@@ -8,23 +9,28 @@ public class Negocio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @JsonProperty("id_Negocios")
     private Long id_Negocios;   // mapea id_Negocios
 
+    @JsonProperty("nombre")
     private String nombre;
+    @JsonProperty("direccion")
     private String direccion;
+    @JsonProperty("telefono")
     private String telefono;
 
     @Column(unique = true)
+    @JsonProperty("correo")
     private String correo;
 
     @Column(name = "horario_general")
+    @JsonProperty("horario_general")
     private String horario_general;
 
     // Getters y Setters
     public Long getId() {
         return id_Negocios;
     }
-
     public void setId_Negocios(Long id) {
         this.id_Negocios = id;
     }

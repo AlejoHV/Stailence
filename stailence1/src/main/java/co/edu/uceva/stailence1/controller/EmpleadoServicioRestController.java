@@ -22,8 +22,8 @@ public class EmpleadoServicioRestController {
     }
 
     @GetMapping("/{idEmpleado}/{idServicio}")
-    public EmpleadoServicio obtenerPorId(@PathVariable Long idEmpleado, @PathVariable Long idServicio) {
-        return empleadoServicioService.findById(new EmpleadoServicioId(idEmpleado, idServicio));
+    public EmpleadoServicio obtenerPorId(@PathVariable Long id_Empleado, @PathVariable Long id_Servicio) {
+        return empleadoServicioService.findById(new EmpleadoServicioId(id_Empleado, id_Servicio));
     }
 
     @PostMapping
@@ -32,7 +32,7 @@ public class EmpleadoServicioRestController {
     }
 
     @DeleteMapping("/{idEmpleado}/{idServicio}")
-    public void eliminar(@PathVariable Long idEmpleado, @PathVariable Long idServicio) {
-        empleadoServicioService.delete(new EmpleadoServicioId(idEmpleado, idServicio));
+    public void eliminar(@PathVariable Long id_Empleado, @PathVariable Long id_Servicio) {
+        empleadoServicioService.delete(new EmpleadoServicioId(id_Empleado, id_Servicio));
     }
 }
