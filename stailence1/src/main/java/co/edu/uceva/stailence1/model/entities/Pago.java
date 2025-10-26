@@ -1,0 +1,71 @@
+package co.edu.uceva.stailence1.model.entities;
+
+import jakarta.persistence.*;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+@Entity
+@Table(name = "pagos")
+public class Pago {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_Pagos")
+    private Long id_Pagos;
+    @Column(nullable = false)
+    private BigDecimal valor;
+
+    @Column(nullable = false)
+    private LocalDateTime fecha;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "metodo_pago", nullable = false)
+    private MetodoPago metodo_pago;
+
+    @ManyToOne
+    @JoinColumn(name = "id_Cita")
+    private Cita cita;
+
+    public enum MetodoPago {
+        efectivo,
+        tarjeta,
+        transferencia,
+        otros
+    }
+
+    // Getters y Setters
+    public Long getId() {
+        return id_Pagos;
+    }
+    public void setId(Long id) {
+        this.id_Pagos = id;
+    }
+
+    public BigDecimal getValor() {
+        return valor;
+    }
+    public void setValor(BigDecimal valor) {
+        this.valor = valor;
+    }
+
+    public LocalDateTime getFecha() {
+        return fecha;
+    }
+    public void setFecha(LocalDateTime fecha) {
+        this.fecha = fecha;
+    }
+
+    public MetodoPago getMetodoPago() {
+        return metodo_pago;
+    }
+    public void setMetodoPago(MetodoPago metodoPago) {
+        this.metodo_pago = metodoPago;
+    }
+
+    public Cita getCita() {
+        return cita;
+    }
+    public void setCita(Cita cita) {
+        this.cita = cita;
+    }
+}

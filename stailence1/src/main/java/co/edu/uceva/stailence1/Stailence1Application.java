@@ -8,6 +8,7 @@ public class Stailence1Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Stailence1Application.class, args);
+		System.out.println("Aplicación iniciada correctamente.");
 	}
 
 }
