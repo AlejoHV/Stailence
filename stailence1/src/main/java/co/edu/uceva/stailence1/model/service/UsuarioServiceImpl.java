@@ -1,6 +1,7 @@
 package co.edu.uceva.stailence1.model.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -32,12 +33,17 @@ public class UsuarioServiceImpl implements IUsuarioService {
 
     @Override
     public void delete(Long id) {
-        usuarioDao.deleteById(id);
+
     }
 
     @Override
     public Usuarios findById(Long id) {
         return usuarioDao.findById(id).orElse(null);
+    }
+
+    @Override
+    public Optional<Usuarios> findByCorreo(String correo) {
+        return usuarioDao.findByCorreo(correo);
     }
 
     @Override
@@ -49,15 +55,12 @@ public class UsuarioServiceImpl implements IUsuarioService {
         usuarioDao.findByCorreo(request.getCorreo()).ifPresent(usuario -> {
             throw new IllegalStateException("Ya existe un usuario registrado con ese correo");
         });
-
         Usuarios nuevoUsuario = new Usuarios();
         nuevoUsuario.setNombre(request.getNombre());
         nuevoUsuario.setApellido("");
         nuevoUsuario.setCorreo(request.getCorreo());
         nuevoUsuario.setContrasena(passwordEncoder.encode(request.getContrasena()));
         nuevoUsuario.setRol(Usuarios.Rol.cliente);
-        nuevoUsuario.setTipoUsuario(null);
-        nuevoUsuario.setNegocio(null);
 
         return usuarioDao.save(nuevoUsuario);
     }
