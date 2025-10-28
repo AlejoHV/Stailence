@@ -9,6 +9,9 @@ public class RegistroUsuarioRequest {
     @NotBlank(message = "El nombre es obligatorio")
     private String nombre;
 
+    @NotBlank(message = "El apellido es obligatorio")
+    private String apellido;
+
     @NotBlank(message = "El correo es obligatorio")
     @Email(message = "El formato del correo es inválido")
     private String correo;
@@ -27,6 +30,10 @@ public class RegistroUsuarioRequest {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+
+    public String getApellido() { return apellido; }
+
+    public void setApellido(String apellido) { this.apellido = apellido; }
 
     public String getCorreo() {
         return correo;

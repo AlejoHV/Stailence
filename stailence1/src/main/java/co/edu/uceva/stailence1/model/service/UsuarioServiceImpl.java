@@ -57,7 +57,7 @@ public class UsuarioServiceImpl implements IUsuarioService {
         });
         Usuarios nuevoUsuario = new Usuarios();
         nuevoUsuario.setNombre(request.getNombre());
-        nuevoUsuario.setApellido("");
+        nuevoUsuario.setApellido(request.getApellido());
         nuevoUsuario.setCorreo(request.getCorreo());
         nuevoUsuario.setContrasena(passwordEncoder.encode(request.getContrasena()));
         nuevoUsuario.setRol(Usuarios.Rol.cliente);
