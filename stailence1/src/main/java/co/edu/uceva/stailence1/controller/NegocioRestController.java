@@ -2,7 +2,8 @@ package co.edu.uceva.stailence1.controller;
 
 import co.edu.uceva.stailence1.model.entities.Negocio;
 import co.edu.uceva.stailence1.model.service.INegocioService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,41 +12,52 @@ import java.util.List;
 @RequestMapping("/api/negocios")  // Prefijo para la ruta
 public class NegocioRestController {
 
-    @Autowired
-    private INegocioService negocioService;
+    private final INegocioService negocioService;
+
+    public NegocioRestController(INegocioService negocioService) {
+        this.negocioService = negocioService;
+    }
 
     // Crear negocio
     @PostMapping
-    public Negocio crearNegocio(@RequestBody Negocio negocio) {
-        return negocioService.save(negocio);
+    public ResponseEntity<Negocio> crearNegocio(@RequestBody Negocio negocio) {
+        Negocio creado = negocioService.save(negocio);
+        return ResponseEntity.status(HttpStatus.CREATED).body(creado);
     }
 
-    // Listar todos los negocios
+    // Listar todos los Negocios
     @GetMapping
-    public List<Negocio> listarNegocios() {
-        return negocioService.findAll();
+    public ResponseEntity<List<Negocio>> listarNegocios() {
+        List<Negocio> Negocios = negocioService.findAll();
+        return ResponseEntity.ok(Negocios);
     }
 
     // Buscar un negocio por id
     @GetMapping("/{id}")
-    public Negocio obtenerNegocio(@PathVariable Long id) {
-        return negocioService.findById(id);
+    public ResponseEntity<Negocio> obtenerNegocio(@PathVariable Long id) {
+        Negocio negocio = negocioService.findById(id);
+        if (negocio == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(negocio);
     }
 
     // Actualizar un negocio
     @PutMapping("/{id}")
-    public Negocio actualizarNegocio(@PathVariable Long id, @RequestBody Negocio negocio) {
+    public ResponseEntity<Negocio> actualizarNegocio(@PathVariable Long id, @RequestBody Negocio negocio) {
         Negocio negocioExistente = negocioService.findById(id);
         if (negocioExistente != null) {
             negocio.setId_Negocios(id);
-            return negocioService.save(negocio);
+            Negocio actualizado = negocioService.save(negocio);
+            return ResponseEntity.ok(actualizado);
         }
-        return null;
+        return ResponseEntity.notFound().build();
     }
 
     // Eliminar un negocio
     @DeleteMapping("/{id}")
-    public void eliminarNegocio(@PathVariable Long id) {
+    public ResponseEntity<Void> eliminarNegocio(@PathVariable Long id) {
         negocioService.delete(id);
+        return ResponseEntity.noContent().build();
     }
 }
