@@ -33,4 +33,14 @@ public class EmpleadoServicioServiceImpl implements IEmpleadoServicioService {
     public void delete(EmpleadoServicioId id) {
         empleadoServicioDao.deleteById(id);
     }
+
+    @Override
+    public List<EmpleadoServicio> findByServicioId(Long idServicio) {
+        return empleadoServicioDao.findByServicioId(idServicio);
+    }
+
+    @Override
+    public List<EmpleadoServicio> findByEmpleadoId(Long idEmpleado) {
+        return empleadoServicioDao.findByEmpleadoId(idEmpleado);
+    }
 }

@@ -10,4 +10,8 @@ public interface IEmpleadoServicioService {
     EmpleadoServicio findById(EmpleadoServicioId id);
     EmpleadoServicio save(EmpleadoServicio empleadoServicio);
     void delete(EmpleadoServicioId id);
+
+    // Nuevos métodos
+    List<EmpleadoServicio> findByServicioId(Long idServicio);
+    List<EmpleadoServicio> findByEmpleadoId(Long idEmpleado);
 }

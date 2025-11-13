@@ -4,6 +4,8 @@ import co.edu.uceva.stailence1.model.entities.EmpleadoServicio;
 import co.edu.uceva.stailence1.model.entities.EmpleadoServicioId;
 import co.edu.uceva.stailence1.model.service.IEmpleadoServicioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -13,26 +15,59 @@ import java.util.List;
 @RequestMapping("/api/empleado-servicio")
 public class EmpleadoServicioRestController {
 
-    @Autowired
     private IEmpleadoServicioService empleadoServicioService;
 
+    public EmpleadoServicioRestController(IEmpleadoServicioService empleadoServicioService) {
+        this.empleadoServicioService = empleadoServicioService;
+    }
+
     @GetMapping
-    public List<EmpleadoServicio> listar() {
-        return empleadoServicioService.findAll();
+    public ResponseEntity<List<EmpleadoServicio>> listar() {
+        return ResponseEntity.ok(empleadoServicioService.findAll());
     }
 
     @GetMapping("/{idEmpleado}/{idServicio}")
-    public EmpleadoServicio obtenerPorId(@PathVariable Long id_Empleado, @PathVariable Long id_Servicio) {
-        return empleadoServicioService.findById(new EmpleadoServicioId(id_Empleado, id_Servicio));
+    public ResponseEntity<EmpleadoServicio> obtenerPorId(
+            @PathVariable("idEmpleado") Long idEmpleado,
+            @PathVariable("idServicio") Long idServicio) {
+
+        EmpleadoServicio empleadoServicio = empleadoServicioService
+            .findById(new EmpleadoServicioId(idEmpleado, idServicio));
+
+        if (empleadoServicio != null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(empleadoServicio);
     }
 
     @PostMapping
-    public EmpleadoServicio crear(@RequestBody EmpleadoServicio empleadoServicio) {
-        return empleadoServicioService.save(empleadoServicio);
+    public ResponseEntity<EmpleadoServicio> crear(@RequestBody EmpleadoServicio empleadoServicio) {
+        EmpleadoServicio creado = empleadoServicioService.save(empleadoServicio);
+        return ResponseEntity.status(HttpStatus.CREATED).body(creado);
     }
 
     @DeleteMapping("/{idEmpleado}/{idServicio}")
-    public void eliminar(@PathVariable Long id_Empleado, @PathVariable Long id_Servicio) {
-        empleadoServicioService.delete(new EmpleadoServicioId(id_Empleado, id_Servicio));
+    public ResponseEntity<Void> eliminar(
+            @PathVariable("idEmpleado") Long idEmpleado,
+            @PathVariable("idServicio") Long idServicio) {
+
+        EmpleadoServicioId id = new EmpleadoServicioId(idEmpleado, idServicio);
+        empleadoServicioService.delete(id);
+        return ResponseEntity.noContent().build();
     }
+
+    // Endpoint adicional para obtener todos los servicios de un empleado
+    @GetMapping("/empleado/{idEmpleado}")
+    public ResponseEntity<List<EmpleadoServicio>> listarPorEmpleado(@PathVariable Long idEmpleado) {
+        List<EmpleadoServicio> servicios = empleadoServicioService.findByEmpleadoId(idEmpleado);
+        return ResponseEntity.ok(servicios);
+    }
+
+    // Endpoint adicional para obtener todos los empleados de un servicio
+    @GetMapping("/servicio/{idServicio}")
+    public ResponseEntity<List<EmpleadoServicio>> listarPorServicio(@PathVariable Long idServicio) {
+        List<EmpleadoServicio> empleados = empleadoServicioService.findByServicioId(idServicio);
+        return ResponseEntity.ok(empleados);
+    }
+
 }
